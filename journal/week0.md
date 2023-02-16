@@ -31,3 +31,8 @@ Also instead of exporting the AWS credentials as [usual](https://docs.aws.amazon
 ### Create Budgets with AWS Cli
 
         aws budgets create-budget --account-id $AWS_ACCOUNT_ID --budget file://aws/json/budget.json --notifications-with-subscribers file://aws/json/notifications-with-subscribers.json
+        
+        I see the budget on my AWS account. Remember to delete it to avoid costs. 
+        
+        <img width="1540" alt="image" src="https://user-images.githubusercontent.com/17580456/219496689-d5487c11-c251-402c-99a0-53eac7f76a04.png">
+
