@@ -8,6 +8,12 @@
 
 Available in [Lucidchart](https://lucid.app/lucidchart/0da8aa77-7888-45f2-a24e-936f3ebb989c/edit?viewport_loc=-641%2C60%2C2672%2C1416%2C0_0&invitationId=inv_112b39cf-ca87-4859-9c0e-b31d7c082bc8) as well. 
 
+### Logical Diagram 
+
+<img width="971" alt="image" src="https://user-images.githubusercontent.com/17580456/219497857-0b86f6b3-31f8-4efe-a111-67c89c2e26f1.png">
+
+Available in [Lucidchart](https://lucid.app/lucidchart/ec42fb3c-f276-4d2b-af85-99962db59182/edit?viewport_loc=-636%2C-148%2C3072%2C1628%2C0_0&invitationId=inv_8c6fa08c-f484-4c93-8daf-9de110a47d14) as well. 
+
 ### Create Admin User 
 
 <img width="443" alt="image" src="https://user-images.githubusercontent.com/17580456/219496165-11a9a2f0-0de9-4d66-b678-58db26e3ebe7.png">
