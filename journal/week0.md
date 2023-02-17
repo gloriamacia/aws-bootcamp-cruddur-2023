@@ -42,3 +42,17 @@ I see the budget on my AWS account. Remember to delete it to avoid costs.
 
 <img width="1540" alt="image" src="https://user-images.githubusercontent.com/17580456/219496689-d5487c11-c251-402c-99a0-53eac7f76a04.png">
 
+### Create Billing Alarm with Cloudwatch
+
+I followed this [tutorial](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html) in AWS docs.
+
+For that I also needed to create an SNS topic and subscribe to it which I did with the cli.
+
+<img width="750" alt="image" src="https://user-images.githubusercontent.com/17580456/219805029-3abeb44c-5aae-4384-bd5c-f2427aa30ae4.png">
+
+### Support Case with AWS 
+
+At first I tried to use my personal email address to setup the bootcamp. It was an old AWS that was un-activated. I had a lot of problems due to my account not being fully activated. After trying for two days scalating the case within AWS support, I decided to re-do the setup with my LSE account. 010116213471
+I wish I had done this earlier as I got really frustrated with week 0 due to this issue (I thought I was already dropping out!!) Glad I found a solution and I can continue to week1. 
+
+
