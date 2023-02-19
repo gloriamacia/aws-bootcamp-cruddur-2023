@@ -66,3 +66,25 @@ I can also see data being returned as json if I go to the URL in ports (make sur
 
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/17580456/219963324-aa56de42-80a6-48a8-b0d7-899b47cc7327.png">
 
+### Send Curl to Test Server
+
+To do the same in a de-attached way run: 
+
+        docker container run --rm -p 4567:4567 -e FRONTEND_URL='*' -e BACKEND_URL='*' -d backend-flask
+        
+This allows us to use the terminal, so we can retrieve the JSON data this time using curl: 
+
+        curl -X GET http://localhost:4567/api/activities/home -H "Accept: application/json" -H "Content-Type: application/json"
+
+<img width="1409" alt="image" src="https://user-images.githubusercontent.com/17580456/219963902-6b200419-55e7-463f-befb-c0da5d3abfd3.png">
+
+### Check Container Logs
+
+    docker logs <CONTAINER_ID> -f
+    
+ Another way I try is: 
+ 
+    docker logs $CONTAINER_ID -f
+
+
+
