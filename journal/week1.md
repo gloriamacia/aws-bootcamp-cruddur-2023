@@ -158,6 +158,10 @@ Create `docker-compose.yml` at the root of your project.This will allow us to RU
             driver: bridge
             name: cruddur
             
+Docker compose up in VSCODE UI and we can see data!!   
+
+<img width="1646" alt="image" src="https://user-images.githubusercontent.com/17580456/219967724-3a73c510-50bf-4708-ac83-6bbbfe142b9f.png">
+
 ## Adding DynamoDB Local and Postgres
 
 We are going to use Postgres and DynamoDB local in future labs We can bring them in as containers and reference them externally
