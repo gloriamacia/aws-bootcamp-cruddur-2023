@@ -61,3 +61,8 @@ Here I am running the backend application as a container in the background so th
 I see as images the basic slim-buster image that is used as a based as well as the one I created for my backend container: 
 
 <img width="1074" alt="image" src="https://user-images.githubusercontent.com/17580456/219962842-fc75a983-22bd-48fe-908d-01d32f682b83.png">
+
+I can also see data being returned as json if I go to the URL in ports (make sure is unlocked!) 
+
+<img width="1791" alt="image" src="https://user-images.githubusercontent.com/17580456/219963324-aa56de42-80a6-48a8-b0d7-899b47cc7327.png">
+
