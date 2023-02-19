@@ -120,3 +120,64 @@ Create a file here: `frontend-react-js/Dockerfile`
 ### Run Container
 
         docker run -p 3000:3000 -d frontend-react-js
+        
+Front-end is there but the data is missing because we need to add the back-end. 
+
+<img width="1646" alt="image" src="https://user-images.githubusercontent.com/17580456/219965206-ba83310f-5f62-4664-8a14-f6fcc67977b0.png">
+
+## Multiple Containers
+
+### Create a docker-compose file
+
+Create `docker-compose.yml` at the root of your project.This will allow us to RUN multiple containers. 
+
+        version: "3.8"
+        services:
+          backend-flask:
+            environment:
+              FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+              BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+            build: ./backend-flask
+            ports:
+              - "4567:4567"
+            volumes:
+              - ./backend-flask:/backend-flask
+          frontend-react-js:
+            environment:
+              REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+            build: ./frontend-react-js
+            ports:
+              - "3000:3000"
+            volumes:
+              - ./frontend-react-js:/frontend-react-js
+
+        # the name flag is a hack to change the default prepend folder
+        # name when outputting the image names
+        networks: 
+          internal-network:
+            driver: bridge
+            name: cruddur
+            
+## Adding DynamoDB Local and Postgres
+
+We are going to use Postgres and DynamoDB local in future labs We can bring them in as containers and reference them externally
+
+Lets integrate the following into our existing docker compose file:
+
+### Postgres
+
+        services:
+          db:
+            image: postgres:13-alpine
+            restart: always
+            environment:
+              - POSTGRES_USER=postgres
+              - POSTGRES_PASSWORD=password
+            ports:
+              - '5432:5432'
+            volumes: 
+              - db:/var/lib/postgresql/data
+        volumes:
+          db:
+            driver: local
+            
