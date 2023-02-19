@@ -86,5 +86,37 @@ This allows us to use the terminal, so we can retrieve the JSON data this time u
  
     docker logs $CONTAINER_ID -f
 
+VSCODE makes it super easy to see the logs 
 
+<img width="1277" alt="image" src="https://user-images.githubusercontent.com/17580456/219964446-f7d30fab-2522-4a8a-82bc-cf9d13d5e111.png">
 
+### Gain Access to a Container
+
+        docker exec -it <container_name or container_id> /bin/bash
+        
+<img width="762" alt="image" src="https://user-images.githubusercontent.com/17580456/219964761-d02e833e-49ed-4434-83ea-95120cb1372a.png">
+
+### Delete an Image
+
+        docker image rm backend-flask --force
+        
+ I can check by doing `docker images` that the image is gone. 
+ 
+ ## Containerize Frontend
+ 
+### Run NPM Install
+We have to run NPM Install before building the container since it needs to copy the contents of node_modules
+
+        cd frontend-react-js
+        npm i
+
+### Create Docker File
+Create a file here: `frontend-react-js/Dockerfile`
+
+### Build Container
+
+        docker build -t frontend-react-js ./frontend-react-js
+
+### Run Container
+
+        docker run -p 3000:3000 -d frontend-react-js
