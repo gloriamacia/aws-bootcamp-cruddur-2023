@@ -210,21 +210,6 @@ Lets integrate the following into our existing docker compose file:
               - "./docker/dynamodb:/home/dynamodblocal/data"
             working_dir: /home/dynamodblocal
             
- Example of using DynamoDB local https://github.com/100DaysOfCloud/challenge-dynamodb-local
-
-## Volumes
-directory volume mapping
-
-        volumes: 
-        - "./docker/dynamodb:/home/dynamodblocal/data"
-
-named volume mapping
-
-        volumes: 
-          - db:/var/lib/postgresql/data
-
-        volumes:
-          db:
-            driver: local          
+ Example of using DynamoDB local https://github.com/100DaysOfCloud/challenge-dynamodb-local    
 
            
