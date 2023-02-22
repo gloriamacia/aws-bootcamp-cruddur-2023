@@ -110,6 +110,14 @@ We have to run NPM Install before building the container since it needs to copy 
         cd frontend-react-js
         npm i
 
+I added this into the .gitpod.yml
+
+      - name: frontend-requirements
+        init: | 
+          cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
+          npm i
+          cd /workspace/aws-bootcamp-cruddur-2023
+
 ### Create Docker File
 Create a file here: `frontend-react-js/Dockerfile`
 
@@ -193,7 +201,11 @@ Lets integrate the following into our existing docker compose file:
               echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
               sudo apt update
               sudo apt install -y postgresql-client-13 libpq-dev
-  
+ 
+ It works!!
+ 
+ <img width="1293" alt="image" src="https://user-images.githubusercontent.com/17580456/220769863-5f08f286-db63-4c85-bcd6-ea8a32f30f34.png">
+
  ## DynamoDB Local
  
          services:
@@ -209,7 +221,10 @@ Lets integrate the following into our existing docker compose file:
             volumes:
               - "./docker/dynamodb:/home/dynamodblocal/data"
             working_dir: /home/dynamodblocal
-            
+It works! 
+
+<img width="1237" alt="image" src="https://user-images.githubusercontent.com/17580456/220770084-b9a85cd2-7126-42b8-abd3-81d374c6358d.png">
+
  Example of using DynamoDB local https://github.com/100DaysOfCloud/challenge-dynamodb-local    
 
            
