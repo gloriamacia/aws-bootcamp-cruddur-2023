@@ -182,6 +182,7 @@ We need to add these two env vars to our backend-flask in our `docker-compose.ym
       AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
 ```
 
-<img width="1486" alt="Screenshot 2023-03-01 at 00 02 31" src="https://user-images.githubusercontent.com/17580456/222002908-d2342827-b913-4795-a404-3348a1eca24c.png">
+<img width="1723" alt="Screenshot 2023-03-01 at 00 02 40" src="https://user-images.githubusercontent.com/17580456/222002980-850061d6-bd74-4891-a70c-28798500835a.png">
+
 
 
