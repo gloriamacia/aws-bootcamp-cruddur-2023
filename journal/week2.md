@@ -185,4 +185,63 @@ We need to add these two env vars to our backend-flask in our `docker-compose.ym
 <img width="1723" alt="Screenshot 2023-03-01 at 00 02 40" src="https://user-images.githubusercontent.com/17580456/222002980-850061d6-bd74-4891-a70c-28798500835a.png">
 
 
+## CloudWatch Logs
+
+
+Add to the `requirements.txt`
+
+```
+watchtower
+```
+
+```sh
+pip install -r requirements.txt
+```
+
+
+In `app.py`
+
+```
+import watchtower
+import logging
+from time import strftime
+```
+
+```py
+# Configuring Logger to Use CloudWatch
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+console_handler = logging.StreamHandler()
+cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+LOGGER.addHandler(console_handler)
+LOGGER.addHandler(cw_handler)
+LOGGER.info("some message")
+```
+
+```py
+@app.after_request
+def after_request(response):
+    timestamp = strftime('[%Y-%b-%d %H:%M]')
+    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
+    return response
+```
+
+We'll log something in an API endpoint
+```py
+LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
+```
+
+Set the env var in your backend-flask for `docker-compose.yml`
+
+```yml
+      AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+```
+
+> passing AWS_REGION doesn't seems to get picked up by boto3 so pass default region instead
+
+<img width="1502" alt="image" src="https://user-images.githubusercontent.com/17580456/222799107-f24cba6e-b6f1-4269-86d5-46d16aa9783a.png">
+
+      AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
 
