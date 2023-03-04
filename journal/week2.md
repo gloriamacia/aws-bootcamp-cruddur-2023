@@ -3,6 +3,8 @@
 
 ## HoneyComb
 
+We are using Honeycomb.io for distributed tracing. 
+
 When creating a new dataset in Honeycomb it will provide all these installation [instructions](https://docs.honeycomb.io/getting-data-in/opentelemetry/python/) 
 
 You'll need to grab the API key from your honeycomb account:
@@ -95,6 +97,8 @@ span.set_attribute("app.max.likes.id", results[max_idx]['uuid'])
 ## X-Ray
 
 ### Instrument AWS X-Ray for Flask
+
+We will be using AWS X-Ray for testing out the AWS service for distributed tracing.
 
 Make sure aws region is set as gitpod env variable. 
 
@@ -246,6 +250,8 @@ Set the env var in your backend-flask for `docker-compose.yml`
       AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
 
 ## Rollbar
+
+We will be using Rollbar for error logging and tracking. 
 
 https://rollbar.com/
 
