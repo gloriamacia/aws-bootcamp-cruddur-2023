@@ -15,5 +15,3 @@ blinker
 rollbar
 
 Flask-AWSCognito
-
-
