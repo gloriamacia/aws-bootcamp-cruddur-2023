@@ -239,6 +239,10 @@ if (cognitoErrors){
 // just before submit component
 {errors}
 ```
+<img width="1215" alt="image" src="https://user-images.githubusercontent.com/17580456/224482832-ecc9c93b-10a1-4e07-b96a-3263dcc7cec5.png">
+
+<img width="1484" alt="Screenshot 2023-03-11 at 11 35 40" src="https://user-images.githubusercontent.com/17580456/224482713-8c7f27fa-074a-43c2-b33f-7978e95c4e2b.png">
+
 
 ## Signup Page
 
@@ -364,3 +368,9 @@ cors = CORS(
   methods="OPTIONS,GET,HEAD,POST"
 )
 ```
+
+<img width="1484" alt="Screenshot 2023-03-11 at 11 54 47" src="https://user-images.githubusercontent.com/17580456/224482751-9e487fd4-2537-481a-8a36-11c34200b23b.png">
+
+<img width="535" alt="Screenshot 2023-03-11 at 12 00 12" src="https://user-images.githubusercontent.com/17580456/224482678-05e87a2f-fdbb-4b6b-9df7-2c88e56ee08d.png">
+
+
