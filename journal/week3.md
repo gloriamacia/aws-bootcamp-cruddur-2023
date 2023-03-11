@@ -1,5 +1,11 @@
 # Week 3 — Decentralized Authentication
 
+The goal of this week was to add authentication to our Cruddur app. The main service behind will be AWS cognito user pools. 
+We will first setup the sigin component. As we are only doing sigin, the user must be created through the cognito console. 
+Once this works we will delete the user through the console and move the the next step, which is sign up. For sign up the user will be created through the app, and then appear in the cognito UI. User must be confirmed by an automatically sent email. We will then setup recovery in case the user forgets the password, for it a confirmation code is also sent. Finally, dependently on whether the user is signed in or not, the backend should also behave differently and we need to ensure logout works as well. 
+
+The code is below and added a couple screenshots showing the results. 
+
 ## Install AWS Amplify
 
 ```sh
