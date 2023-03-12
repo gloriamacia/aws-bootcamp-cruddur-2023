@@ -14,7 +14,7 @@ nav a.primary {
   display: flex;
   gap: 24px;
   align-items: center;
-  color: rgb(255,255,255,0.5);
+  color: rgb(255,255,255,0.7);
   font-size: 20px;
   text-decoration: none;
   padding: 12px 0;
@@ -24,7 +24,7 @@ nav a.primary:hover {
   color: rgb(255,255,255,1);
 }
 nav a.primary .icon {
-  fill: rgb(255,255,255,0.5);
+  fill: rgb(255,255,255,0.7);
   width: 24px;
   height: 24px;
 }
@@ -34,11 +34,11 @@ nav a.primary:hover .icon {
 }
 
 nav a.primary.active {
-  color: rgb(149,0,255) !important;
+  color: rgb(255,255,255,0.7) !important;
   font-weight: 600;
 }
 nav a.primary.active svg {
-  fill: rgb(149,0,255) !important;
+  fill: rgb(255,255,255,0.7) !important;
 }
 
 nav button.post {
