@@ -77,3 +77,45 @@ We also use some bash scrips, they are not executable by default so we need to m
 
      ls -la
      chmod u+x db-create db-drop db-schema-load 
+ 
+ We place all the files in the backend folder, under bin and db: 
+ 
+ <img width="1173" alt="image" src="https://user-images.githubusercontent.com/17580456/224537253-519209de-59d9-4818-8854-27962cce870a.png">
+
+To run one of the bash scripts, we simply do: 
+
+    . bin/db-seed
+    
+This will put the seed data into the table: 
+
+db/seed.sql 
+
+    -- this file was manually created
+    INSERT INTO public.users (display_name, handle, cognito_user_id)
+    VALUES
+      ('Andrew Brown', 'andrewbrown' ,'MOCK'),
+      ('Andrew Bayko', 'bayko' ,'MOCK');
+
+    INSERT INTO public.activities (user_uuid, message, expires_at)
+    VALUES
+      (
+        (SELECT uuid from public.users WHERE users.handle = 'andrewbrown' LIMIT 1),
+        'This was imported as seed data!',
+        current_timestamp + interval '10 day'
+      )
+
+bin/db-seed 
+
+    #! /bin/bash
+
+    #echo "== db-seed"
+    CYAN='\033[1;36m'
+    NO_COLOR='\033[0m'
+    LABEL="db-seed"
+    printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+    seed_path="$(realpath .)/db/seed.sql"
+
+    echo $seed_path
+
+    psql $CONNECTION_URL cruddur < $seed_path
