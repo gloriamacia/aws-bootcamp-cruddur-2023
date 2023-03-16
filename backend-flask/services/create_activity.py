@@ -42,7 +42,7 @@ class CreateActivity:
     else:
       model['data'] = {
         'uuid': uuid.uuid4(),
-        'display_name': 'Andrew Brown',
+        'display_name': 'Gloria Macia',
         'handle':  user_handle,
         'message': message,
         'created_at': now.isoformat(),
