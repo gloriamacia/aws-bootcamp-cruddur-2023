@@ -119,3 +119,26 @@ bin/db-seed
     echo $seed_path
 
     psql $CONNECTION_URL cruddur < $seed_path
+    
+ ## Connecting to RDS 
+ 
+We need to modify the inbound rules of RDS security group to allow gitpod ID 
+
+    curl ifconfig.me
+
+<img width="1706" alt="Screenshot 2023-03-16 at 14 55 54" src="https://user-images.githubusercontent.com/17580456/225640614-74a9c017-2b92-4f82-ae90-14afbfc96171.png">
+
+We can see we manage to connect by doing `psql $PROD_CONNECTION_URL`
+
+  <img width="1386" alt="Screenshot 2023-03-16 at 14 55 30" src="https://user-images.githubusercontent.com/17580456/225640596-8da93e83-4ca0-41f8-b0a7-29e268bd5c09.png">
+
+As this is a process we would have created a little script: 
+   
+    export DB_SG_ID="sg-0760b91ee4d41bb0b"
+    gp env DB_SG_ID="sg-0760b91ee4d41bb0b"
+    export DB_SG_RULE_ID="sgr-014cb12a3b521a7e0"
+    gp env DB_SG_RULE_ID="sgr-014cb12a3b521a7e0"
+    
+    aws ec2 modify-security-group-rules \
+        --group-id $DB_SG_ID \
+        --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
