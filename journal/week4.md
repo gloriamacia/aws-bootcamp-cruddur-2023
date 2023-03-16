@@ -142,3 +142,7 @@ As this is a process we would have created a little script:
     aws ec2 modify-security-group-rules \
         --group-id $DB_SG_ID \
         --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
+
+I end up the [video](https://www.youtube.com/watch?v=Sa2iB33sKFo&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=48) at the exactly same point as Andrew
+
+<img width="1706" alt="image" src="https://user-images.githubusercontent.com/17580456/225649269-74b6e8f6-d8e3-452b-b2c4-1e5cf595f667.png">
