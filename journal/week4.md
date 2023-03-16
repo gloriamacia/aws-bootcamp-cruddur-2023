@@ -146,3 +146,10 @@ As this is a process we would have created a little script:
 I end up the [video](https://www.youtube.com/watch?v=Sa2iB33sKFo&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=48) at the exactly same point as Andrew
 
 <img width="1706" alt="image" src="https://user-images.githubusercontent.com/17580456/225649269-74b6e8f6-d8e3-452b-b2c4-1e5cf595f667.png">
+
+## Cognito triggers post sign up a confirmation lambda
+
+I followed this instructions [here](https://github.com/omenking/aws-bootcamp-cruddur-2023/blob/week-4/journal/week4.md), and I modified the lambda code to add the extra column. Do not forget to setup the VPC configuration (RDS is inside the VCP!) and it will be much easier if done on setup. After a lot of trouble, I managed to see data.
+
+<img width="1410" alt="image" src="https://user-images.githubusercontent.com/17580456/225752322-7d2521e0-921a-4afc-877f-5cf4a2eee40c.png">
+
