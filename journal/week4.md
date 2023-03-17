@@ -157,5 +157,7 @@ I followed this instructions [here](https://github.com/omenking/aws-bootcamp-cru
 
 Create activity was a lot of sweat and suffer but it finally works. I first managed to make the post appear, I then changed the hard-coded values Andrew had for mine. 
 
-<img width="1619" alt="Screenshot 2023-03-16 at 23 35 22" src="https://user-images.githubusercontent.com/17580456/225768849-ae514cae-ee1b-4b8c-91e1-5bbc3a84570f.png">
+<img width="1619" alt="image" src="https://user-images.githubusercontent.com/17580456/225955053-3137c33c-df9b-4de6-8100-601652d83334.png">
+
+
 
