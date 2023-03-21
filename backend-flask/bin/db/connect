@@ -1,14 +1,9 @@
-#! /bin/bash
+#!/bin/bash
 
-#echo "== db-schema-load"
 CYAN='\033[1;36m'
 NO_COLOR='\033[0m'
-LABEL="db-schema-load"
+LABEL="connect"
 printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
-
-schema_path="$(realpath .)/db/schema.sql"
-
-echo $schema_path
 
 if [ "$1" = "prod" ]; then
   echo "Running in production mode"
@@ -17,4 +12,4 @@ else
   URL=$CONNECTION_URL
 fi
 
-psql $URL cruddur < $schema_path
+psql $URL

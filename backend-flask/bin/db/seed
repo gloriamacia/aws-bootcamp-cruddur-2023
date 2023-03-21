@@ -1,9 +1,9 @@
 #! /bin/bash
 
-#echo "== db-seed"
+#echo "== seed"
 CYAN='\033[1;36m'
 NO_COLOR='\033[0m'
-LABEL="db-seed"
+LABEL="seed"
 printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 
 seed_path="$(realpath .)/db/seed.sql"
