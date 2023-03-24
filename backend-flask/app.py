@@ -206,7 +206,6 @@ def data_create_message():
     app.logger.debug(e)
     return {}, 401
 
-
 @app.route("/api/activities/home", methods=['GET'])
 #@xray_recorder.capture('activities_home')
 def data_home():
