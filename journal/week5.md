@@ -14,16 +14,16 @@ Sample conversation data working:
 Posting messages working: 
 <img width="1758" alt="Screenshot 2023-03-25 at 00 14 22" src="https://user-images.githubusercontent.com/17580456/227725631-2034b8be-cbe1-492f-9486-cd89067fc618.png">
 
-Update left working (lambda working): 
-<img width="1758" alt="Screenshot 2023-03-25 at 00 17 30" src="https://user-images.githubusercontent.com/17580456/227725634-c0c6d799-9cbb-47d9-b872-1ca6ab40f606.png">
-<img width="1758" alt="Screenshot 2023-03-25 at 00 17 39" src="https://user-images.githubusercontent.com/17580456/227725638-91b88a43-e655-489f-b216-3be16748f197.png">
-
 New conversation access pattern working:
 <img width="1758" alt="Screenshot 2023-03-24 at 23 16 06" src="https://user-images.githubusercontent.com/17580456/227725649-e3ff6dc3-f235-4605-bb51-cfd11b18b658.png">
 
 Posting messages to new conversation:
 
 <img width="1758" alt="Screenshot 2023-03-24 at 23 21 19" src="https://user-images.githubusercontent.com/17580456/227725656-a3cd0a35-b20e-440b-aa26-dc80d82f75c1.png">
+
+Update left working (lambda working): 
+<img width="1758" alt="Screenshot 2023-03-25 at 00 17 30" src="https://user-images.githubusercontent.com/17580456/227725634-c0c6d799-9cbb-47d9-b872-1ca6ab40f606.png">
+<img width="1758" alt="Screenshot 2023-03-25 at 00 17 39" src="https://user-images.githubusercontent.com/17580456/227725638-91b88a43-e655-489f-b216-3be16748f197.png">
 
 --- bits of code (original, see adapted ones in the repo!) ----- 
 
