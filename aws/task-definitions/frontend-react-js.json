@@ -1,41 +1,35 @@
 {
-    "cluster": "cruddur",
-    "launchType": "FARGATE",
-    "desiredCount": 1,
-    "enableECSManagedTags": true,
-    "enableExecuteCommand": true,
-    "loadBalancers": [
+    "family": "frontend-react-js",
+    "executionRoleArn": "arn:aws:iam::010116213471:role/CruddurServiceExecutionRole",
+    "taskRoleArn": "arn:aws:iam::010116213471:role/CruddurTaskRole",
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "requiresCompatibilities": [ 
+      "FARGATE" 
+    ],
+    "containerDefinitions": [
       {
-          "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:010116213471:targetgroup/cruddur-frontend-react-js/c3a91778e1d48955",
-          "containerName": "frontend-react-js",
-          "containerPort": 3000
-      }
-  ],
-    "networkConfiguration": {
-      "awsvpcConfiguration": {
-        "assignPublicIp": "ENABLED",
-        "securityGroups": [
-            "sg-0135113be90ce6681"
-          ],
-          "subnets": [
-            "subnet-052220afe64dfdb98",
-            "subnet-057fd499cba75ce94",
-            "subnet-00726ecf4b1839de2"
-          ]
-      }
-    },
-    "propagateTags": "SERVICE",
-    "serviceName": "frontend-react-js",
-    "taskDefinition": "frontend-react-js",
-    "serviceConnectConfiguration": {
-      "enabled": true,
-      "namespace": "cruddur",
-      "services": [
-        {
-          "portName": "frontend-react-js",
-          "discoveryName": "frontend-react-js",
-          "clientAliases": [{"port": 3000}]
+        "name": "frontend-react-js",
+        "image": "010116213471.dkr.ecr.eu-west-1.amazonaws.com/frontend-react-js",
+        "essential": true,
+        "portMappings": [
+          {
+            "name": "frontend-react-js",
+            "containerPort": 3000,
+            "protocol": "tcp", 
+            "appProtocol": "http"
+          }
+        ],
+  
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+              "awslogs-group": "cruddur",
+              "awslogs-region": "eu-west-1",
+              "awslogs-stream-prefix": "frontend-react-js"
+          }
         }
-      ]
-    }
+      }
+    ]
   }
