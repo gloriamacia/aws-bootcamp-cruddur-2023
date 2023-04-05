@@ -8,10 +8,10 @@ LABEL="setup"
 printf "${CYAN}==== ${LABEL}${NO_COLOR}\n"
 
 ABS_PATH=$(readlink -f "$0")
-bin_path=$(dirname $ABS_PATH)
+DB_PATH=$(dirname $ABS_PATH)
 
-source "$bin_path/db/drop"
-source "$bin_path/db/create"
-source "$bin_path/db/schema-load"
-source "$bin_path/db/seed"
-python "$bin_path/db/update_cognito_user_ids"
+source "$DB_PATH/drop"
+source "$DB_PATH/create"
+source "$DB_PATH/schema-load"
+source "$DB_PATH/seed"
+python "$DB_PATH/update_cognito_user_ids"
