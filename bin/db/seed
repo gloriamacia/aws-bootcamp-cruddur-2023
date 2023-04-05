@@ -1,0 +1,17 @@
+#! /bin/bash
+
+#echo "== seed"
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="seed"
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+ABS_PATH=$(readlink -f "$0")
+BIN_PATH=$(dirname $ABS_PATH)
+PROJECT_PATH=$(dirname $BIN_PATH)
+BACKEND_FLASK_PATH="$PROJECT_PATH/backend-flask"
+seed_path="$BACKEND_FLASK_PATH/db/seed.sql"
+
+echo $seed_path
+
+psql $CONNECTION_URL cruddur < $seed_path
