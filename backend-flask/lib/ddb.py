@@ -115,9 +115,7 @@ class Ddb:
     
     message_group_uuid = str(uuid.uuid4())
     message_uuid = str(uuid.uuid4())
-    now = datetime.now(timezone.utc).astimezone().isoformat()
-    last_message_at = now
-    created_at = now
+    created_at = datetime.now().isoformat()
     print('== create_message_group.2')
 
     my_message_group = {
