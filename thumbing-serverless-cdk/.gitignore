@@ -6,3 +6,6 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+*.env
+/workspace/aws-bootcamp-cruddur-2023/aws/lambdas/process-images/node_modules/**
