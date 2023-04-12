@@ -1,4 +1,4 @@
-SELECT 
+SELECT
   users.uuid
 FROM public.users
 WHERE 
