@@ -126,10 +126,10 @@ def init_rollbar():
 def health_check():
   return {'success': True}, 200
 
-#@app.route('/rollbar/test')
-#def rollbar_test():
-#    rollbar.report_message('Hello World!', 'warning')
-#    return "Hello World!"
+# @app.route('/rollbar/test')
+# def rollbar_test():
+#     rollbar.report_message('Hello World!', 'warning')
+#     return "Hello World!"
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
@@ -149,7 +149,6 @@ def data_message_groups():
     # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
-
 
 @app.route("/api/messages/<string:message_group_uuid>", methods=['GET'])
 def data_messages(message_group_uuid):
@@ -210,7 +209,6 @@ def data_create_message():
     # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
-
 
 @app.route("/api/activities/home", methods=['GET'])
 #@xray_recorder.capture('activities_home')
