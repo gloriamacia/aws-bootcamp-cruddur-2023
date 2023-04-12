@@ -39,18 +39,12 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
       folderOutput
     );
 
-    this.createS3NotifyToLambda(folderInput,lambda,bucket);
-
     // create topic and subscription
     const snsTopic = this.createSnsTopic(topicName);
     this.createSnsSubscription(snsTopic,webhookUrl);
 
     const s3AssetsReadWritePolicy = this.createPolicyBucketAccess(bucket.bucketArn)
-
-    
     lambda.addToRolePolicy(s3AssetsReadWritePolicy);
-
-
 
     // add our s3 event notifications
     this.createS3NotifyToLambda(folderInput,lambda,bucket);
