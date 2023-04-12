@@ -4,6 +4,9 @@ import { Construct } from 'constructs';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as s3n from 'aws-cdk-lib/aws-s3-notifications';
 import * as dotenv from 'dotenv';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as subscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
+import * as sns from 'aws-cdk-lib/aws-sns';
 
 
 // Load env variables
@@ -27,8 +30,8 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     console.log('topicName',topicName)
     console.log('functionPath',functionPath)
 
-    const bucket = this.createBucket(bucketName);
-    
+    // const bucket = this.createBucket(bucketName);
+    const bucket = this.importBucket(bucketName);
     const lambda = this.createLambda(
       functionPath,
       bucketName, 
@@ -38,6 +41,21 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
 
     this.createS3NotifyToLambda(folderInput,lambda,bucket);
 
+    // create topic and subscription
+    const snsTopic = this.createSnsTopic(topicName);
+    this.createSnsSubscription(snsTopic,webhookUrl);
+
+    const s3AssetsReadWritePolicy = this.createPolicyBucketAccess(bucket.bucketArn)
+
+    
+    lambda.addToRolePolicy(s3AssetsReadWritePolicy);
+
+
+
+    // add our s3 event notifications
+    this.createS3NotifyToLambda(folderInput,lambda,bucket);
+    this.createS3NotifyToSns(folderOutput,snsTopic,bucket);
+
   }
 
   createBucket(bucketName: string): s3.IBucket {
@@ -45,6 +63,11 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
       bucketName: bucketName,
       removalPolicy: cdk.RemovalPolicy.DESTROY
     });
+    return bucket;
+  }
+
+  importBucket(bucketName: string): s3.IBucket {
+    const bucket = s3.Bucket.fromBucketName(this,"AssetsBucket",bucketName);
     return bucket;
   }
 
@@ -70,6 +93,43 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
       destination,
       {prefix: prefix}
     )
+  }
+
+  createPolicyBucketAccess(bucketArn: string){
+    const s3ReadWritePolicy = new iam.PolicyStatement({
+      actions: [
+        's3:GetObject',
+        's3:PutObject',
+      ],
+      resources: [
+        `${bucketArn}/*`,
+      ]
+    });
+    return s3ReadWritePolicy;
+  }
+
+  createSnsTopic(topicName: string): sns.ITopic{
+    const logicalName = "ThumbingTopic";
+    const snsTopic = new sns.Topic(this, logicalName, {
+      topicName: topicName
+    });
+    return snsTopic;
+  }
+
+  createSnsSubscription(snsTopic: sns.ITopic, webhookUrl: string): sns.Subscription {
+    const snsSubscription = snsTopic.addSubscription(
+      new subscriptions.UrlSubscription(webhookUrl)
+    )
+    return snsSubscription;
+  }
+
+  createS3NotifyToSns(prefix: string, snsTopic: sns.ITopic, bucket: s3.IBucket): void {
+    const destination = new s3n.SnsDestination(snsTopic)
+    bucket.addEventNotification(
+      s3.EventType.OBJECT_CREATED_PUT, 
+      destination,
+      {prefix: prefix}
+    );
   }
 
 }
