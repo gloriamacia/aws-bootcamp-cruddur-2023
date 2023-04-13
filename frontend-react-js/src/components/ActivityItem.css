@@ -1,8 +1,7 @@
 .activity_item {
   display: flex;
   flex-direction: column;
-  border-bottom: solid 1px rgb(149,0,255);
-  border-top: solid 1px rgb(149,0,255);
+  border-bottom: solid 1px rgb(60,54,79);
   overflow: hidden;
   padding: 16px;
 }
