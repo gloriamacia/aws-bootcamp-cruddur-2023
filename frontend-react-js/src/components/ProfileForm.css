@@ -1,7 +1,7 @@
 
 .profile_popup .upload {
   color: white;
-  background: green;
+  background: rgb(94, 0, 128);
 }
 form.profile_form input[type='text'],
 form.profile_form textarea {

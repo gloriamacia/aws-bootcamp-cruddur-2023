@@ -3,3 +3,4 @@ package-lock.json
 frontend-react-js/build/*
 frontend-react-js.env
 backend-flask.env
+aws/lambdas/lambda-authorizer/node_modules/*
