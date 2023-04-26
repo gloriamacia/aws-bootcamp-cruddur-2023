@@ -21,3 +21,11 @@
 
 ### Locally downloaded AWS Cloudformation template has the correct content 
 <img width="1014" alt="Screenshot 2023-04-23 at 19 02 08" src="https://user-images.githubusercontent.com/17580456/233853911-c3ab1059-ce8c-4328-a7c0-f46302bbb22b.png">
+
+### Finish off networking with AWS Cloudformation 
+
+Corresponds to this [video](https://www.youtube.com/watch?v=jPdm0uLyFLM&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=86) - the images show the deployed resources, the outputs, and the networking configuration of the VPC 
+
+<img width="1468" alt="Screenshot 2023-04-26 at 23 29 05" src="https://user-images.githubusercontent.com/17580456/234707669-e978097e-168a-406c-afd4-805cccc7979a.png">
+<img width="1468" alt="Screenshot 2023-04-26 at 23 29 11" src="https://user-images.githubusercontent.com/17580456/234707676-b28cc436-6aee-44a9-bf90-b217edac1930.png">
+<img width="1468" alt="Screenshot 2023-04-26 at 23 09 35" src="https://user-images.githubusercontent.com/17580456/234707651-4be3c1bb-2dda-4f06-bbb4-13df72bde42a.png">
