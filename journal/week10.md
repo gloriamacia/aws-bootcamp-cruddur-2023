@@ -29,3 +29,7 @@ Corresponds to this [video](https://www.youtube.com/watch?v=jPdm0uLyFLM&list=PLB
 <img width="1468" alt="Screenshot 2023-04-26 at 23 29 05" src="https://user-images.githubusercontent.com/17580456/234707669-e978097e-168a-406c-afd4-805cccc7979a.png">
 <img width="1468" alt="Screenshot 2023-04-26 at 23 29 11" src="https://user-images.githubusercontent.com/17580456/234707676-b28cc436-6aee-44a9-bf90-b217edac1930.png">
 <img width="1468" alt="Screenshot 2023-04-26 at 23 09 35" src="https://user-images.githubusercontent.com/17580456/234707651-4be3c1bb-2dda-4f06-bbb4-13df72bde42a.png">
+
+### CFN Diagramming the Network Layer
+<img width="623" alt="image" src="https://user-images.githubusercontent.com/17580456/235315287-84115083-72e0-424c-a8c4-299ce3581a63.png">
+
