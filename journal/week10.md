@@ -33,3 +33,9 @@ Corresponds to this [video](https://www.youtube.com/watch?v=jPdm0uLyFLM&list=PLB
 ### CFN Diagramming the Network Layer
 <img width="623" alt="image" src="https://user-images.githubusercontent.com/17580456/235315287-84115083-72e0-424c-a8c4-299ce3581a63.png">
 
+We also start this other cfn diagram which we will continue in upcoming videos 
+
+<img width="464" alt="image" src="https://user-images.githubusercontent.com/17580456/235315779-24c0ec9e-25ec-49c6-a1ad-8bc0f3bf78c2.png">
+
+<img width="623" alt="image" src="https://user-images.githubusercontent.com/17580456/235315287-84115083-72e0-424c-a8c4-299ce3581a63.png">
+
