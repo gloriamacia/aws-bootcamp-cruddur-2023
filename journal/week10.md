@@ -47,3 +47,9 @@ Important - the cluster stack references the network stack i.e. subnets, vpcId -
 
 <img width="1056" alt="Screenshot 2023-04-30 at 13 43 56" src="https://user-images.githubusercontent.com/17580456/235351304-586719bf-9f36-424a-85dd-1fa09e22b290.png">
 
+We can the re-deploy, make sure to check that the exports of the network stack are correct as we will need them in the cluster stack:
+
+<img width="1515" alt="Screenshot 2023-04-30 at 14 08 36" src="https://user-images.githubusercontent.com/17580456/235352524-631676de-25cf-4838-8178-1089f91b73cd.png">
+<img width="1515" alt="Screenshot 2023-04-30 at 14 09 19" src="https://user-images.githubusercontent.com/17580456/235352525-bd0d9eba-32ad-445d-b9df-29278f1ae57a.png">
+
+Finally, I started playing with passing parameters in a .toml file but it is stil WIP - waiting for the next video to be released. 
