@@ -39,3 +39,11 @@ We also start this other cfn diagram which we will continue in upcoming videos
 
 <img width="623" alt="image" src="https://user-images.githubusercontent.com/17580456/235315287-84115083-72e0-424c-a8c4-299ce3581a63.png">
 
+### CFN for the Cluster 
+
+The code link can be found [here](https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/blob/main/aws/cfn/cluster/template.yaml). 
+
+Important - the cluster stack references the network stack i.e. subnets, vpcId - so they both need to be re-deployed. The advice is to first delete all manually created resources as can be seen below: 
+
+<img width="1056" alt="Screenshot 2023-04-30 at 13 43 56" src="https://user-images.githubusercontent.com/17580456/235351304-586719bf-9f36-424a-85dd-1fa09e22b290.png">
+
