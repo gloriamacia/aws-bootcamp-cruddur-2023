@@ -10,6 +10,6 @@ aws cloudformation deploy \
   --stack-name "CrdNet" \
   --s3-bucket $CFN_BUCKET \
   --template-file "$CFN_PATH" \
-  --tags group=cruddur-cluster \
   --no-execute-changeset \
+  --tags group=cruddur-networking \
   --capabilities CAPABILITY_NAMED_IAM
