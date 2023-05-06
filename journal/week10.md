@@ -52,4 +52,10 @@ We can the re-deploy, make sure to check that the exports of the network stack a
 <img width="1515" alt="Screenshot 2023-04-30 at 14 08 36" src="https://user-images.githubusercontent.com/17580456/235352524-631676de-25cf-4838-8178-1089f91b73cd.png">
 <img width="1515" alt="Screenshot 2023-04-30 at 14 09 19" src="https://user-images.githubusercontent.com/17580456/235352525-bd0d9eba-32ad-445d-b9df-29278f1ae57a.png">
 
-Finally, I started playing with passing parameters in a .toml file but it is stil WIP - waiting for the next video to be released. 
+### ECS Cluster Stack deploys correctly
+<img width="1151" alt="Screenshot 2023-05-06 at 19 47 54" src="https://user-images.githubusercontent.com/17580456/236641241-57f0fe50-970a-46c9-b4f9-5da21c12a763.png">
+
+### Cfn Diagram enhanced with Cluster S<img width="1074" alt="Screenshot 2023-02-19 at 18 00 22" src="https://user-images.githubusercontent.com/17580456/236641314-18f7bfc8-c4a1-4263-b78a-39f4003ecab2.png">
+
+Detail view of the ALB
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/17580456/236641352-36a90d2b-3af8-4a75-83fa-71f8b628355f.png">
