@@ -61,3 +61,42 @@ We can the re-deploy, make sure to check that the exports of the network stack a
 
 Detail view of the ALB
 <img width="375" alt="image" src="https://user-images.githubusercontent.com/17580456/236641352-36a90d2b-3af8-4a75-83fa-71f8b628355f.png">
+
+
+### Fixing the Backend Service (& deploying RDS as IaaC) 
+
+In order to fix the service, we realized we needed first to deploy RDS 
+
+<img width="1022" alt="Screenshot 2023-05-15 at 21 10 03" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/fa766e5d-6374-46e5-acda-08f889604061">
+
+There are a couple manual steps shown in the video - to update in systems manager the connection URL:
+<img width="1022" alt="Screenshot 2023-05-15 at 21 10 43" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/9c30f427-3cb1-4266-8456-0fcf6dc732d7">
+<img width="1022" alt="Screenshot 2023-05-15 at 21 13 00" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/6b57ad4b-e5f6-4c3f-bfd1-3cac132d9301">
+
+This should be an env variable: 
+
+`gp env  DB_PASSWORD=<YOUR DB PASSWORD>`
+
+## Important 
+There is a [fix](https://discord.com/channels/1055552619441049660/1105107618135015444) needed undocumented in the videos. The ALB target group for the backend should be edited. The health check should point to port 4567, not port 80. 
+
+### Health check working 
+
+Health-check seein in service tab: 
+<img width="1022" alt="Screenshot 2023-05-15 at 21 54 52" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/b2ba592b-0fd6-443e-afe2-9594438c1d2f">
+
+Health-check seein in ALB tab: 
+<img width="1022" alt="Screenshot 2023-05-15 at 21 55 27" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/402d6f46-0ac0-4964-a920-3a7609d8bb25">
+
+### Change Route 53 A records
+
+The A records for cruddur.ch and api.crudur.ch should point to the new load balancer: 
+
+<img width="1022" alt="Screenshot 2023-05-15 at 21 56 48" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/0902b6a5-777e-48b5-8ec3-a2aa32beef56">
+
+Once done, it can be accessed as expected from the internet at https://api.cruddur.ch/api/health-check
+
+<img width="1022" alt="Screenshot 2023-05-15 at 21 57 55" src="https://github.com/gloriamacia/aws-bootcamp-cruddur-2023/assets/17580456/018263ec-480b-4fb5-bf05-04226f56447b">
+
+## TO DO - DIAGRAM
+https://www.youtube.com/watch?v=y6ShAco6Edg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=102
